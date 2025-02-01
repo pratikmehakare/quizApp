@@ -15,7 +15,10 @@ function App() {
   useEffect(() => {
     const fetchQuizData = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}` || apiUrl);
+        //for vercel deployment
+        const response = await axios.get(apiUrl);
+        //for local development
+        //const response = await axios.get(`${process.env.REACT_APP_API_URL}`);
         console.log("api",process.env.REACT_APP_API_URL)
         setQuizData(response.data);
       } catch (err) {
