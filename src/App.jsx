@@ -4,6 +4,9 @@ import Quiz from "./components/Quiz";
 import Result from "./components/Result";
 import "./index.css";
 
+const API_URL = "/api/quiz";
+
+
 function App() {
   const [quizData, setQuizData] = useState(null);
   const [quizStarted, setQuizStarted] = useState(false);
@@ -14,7 +17,7 @@ function App() {
   useEffect(() => {
     const fetchQuizData = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}`);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}` || API_URL );
         console.log("api",process.env.REACT_APP_API_URL)
         setQuizData(response.data);
       } catch (err) {
