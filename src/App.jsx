@@ -3,6 +3,7 @@ import axios from "axios";
 import Quiz from "./components/Quiz";
 import Result from "./components/Result";
 import "./index.css";
+const apiUrl = '/api/proxy';
 
 function App() {
   const [quizData, setQuizData] = useState(null);
@@ -14,7 +15,7 @@ function App() {
   useEffect(() => {
     const fetchQuizData = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}`);
+        const response = await axios.get(apiUrl || `${process.env.REACT_APP_API_URL}`);
         console.log("api",process.env.REACT_APP_API_URL)
         setQuizData(response.data);
       } catch (err) {
