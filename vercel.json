@@ -1,9 +1,0 @@
-{
-    "rewrites": [
-      {
-        "source": "/api/quiz",
-        "destination": "https://api.jsonserve.com/Uw5CrX"
-      }
-    ]
-  }
-  
