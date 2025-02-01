@@ -1,3 +1,4 @@
+//for vercel deployement
 export default async function handler(req, res) {
     const apiUrl = 'https://api.jsonserve.com/Uw5CrX'; 
     try {
